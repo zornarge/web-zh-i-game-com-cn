@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zornarge.github.io/web-zh-i-game-com-cn/sitemap.xml

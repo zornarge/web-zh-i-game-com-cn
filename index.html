@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 知识库指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce3b2 0%, #f9cf7c 50%, #f4b85c 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+      color: #2f2b24;
+    }
+
+    .page {
+      max-width: 1120px;
+      width: 100%;
+      background: rgba(255, 250, 240, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 12px 30px rgba(120, 70, 20, 0.15);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #4d3420;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #7a634b;
+      background: #f0e0c8;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #6f5538;
+      margin-bottom: 2.2rem;
+      border-left: 4px solid #e6b46a;
+      padding-left: 1rem;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2.2rem 0 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.6rem 1.5rem 2rem;
+      box-shadow: 0 6px 18px rgba(80, 45, 10, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.25s;
+      border: 1px solid #f7e7d4;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(110, 60, 15, 0.12);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4a3320;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.3px;
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      color: #3f362c;
+      margin-bottom: 0.6rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #f7e5d0;
+      color: #5d4230;
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    .notice-area {
+      background: #fcf2e3;
+      border-radius: 32px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #f0dabc;
+    }
+
+    .notice-text {
+      flex: 1 1 240px;
+      font-size: 0.98rem;
+    }
+
+    .notice-text strong {
+      color: #6e4a2a;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 3rem;
+      background: #faf2e7;
+      border-radius: 32px;
+      padding: 1.8rem 2rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .info-item {
+      flex: 1 1 180px;
+    }
+
+    .info-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4c3926;
+      margin-bottom: 0.4rem;
+      border-bottom: 2px solid #eac69e;
+      display: inline-block;
+      padding-bottom: 0.15rem;
+    }
+
+    .info-item ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .info-item li {
+      font-size: 0.92rem;
+      padding: 0.2rem 0;
+      color: #4b3c2e;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .info-item li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #c38d57;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .faq-mini {
+      margin: 2.2rem 0 1.5rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 1.8rem 2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #3f2f1f;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed #e2cfb6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #5a412a;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      color: #4d3d2e;
+      font-size: 0.94rem;
+    }
+
+    .link-sentence {
+      background: #f7e1c7;
+      border-radius: 60px;
+      padding: 0.7rem 1.8rem;
+      display: inline-block;
+      margin: 1.2rem 0 0.2rem;
+      font-size: 1rem;
+    }
+
+    .link-sentence a {
+      color: #643f22;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid #c8975f;
+      transition: border-color 0.2s, background 0.2s;
+      padding: 0 0.15rem;
+    }
+
+    .link-sentence a:hover {
+      border-bottom-color: #8f653b;
+      background: #f5dbbc;
+      border-radius: 12px;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: #6f5e4b;
+      text-align: center;
+      border-top: 1px solid #e0ccb3;
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.5rem 1.2rem;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .grid-cards {
+        gap: 1rem;
+      }
+      .notice-area {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 1.3rem;
+      }
+      .info-row {
+        padding: 1.2rem 1.3rem;
+        gap: 1.2rem;
+      }
+      .faq-mini {
+        padding: 1rem 1.2rem;
+      }
+      .link-sentence {
+        font-size: 0.95rem;
+        padding: 0.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>
+        爱游戏
+        <small>知识库·简明指南</small>
+      </h1>
+      <div class="subhead">
+        从基础认知到访问要点 · 整理自站内信息
+      </div>
+    </header>
+
+    <!-- 卡片式目录感布局 -->
+    <div class="grid-cards">
+      <div class="card">
+        <h2>📋 站内结构</h2>
+        <p>内容以游戏分类、作品库与更新动态为主。推荐从导航栏的「全部游戏」开始浏览，或关注近期上线列表。</p>
+        <span class="tag">分类清晰</span>
+      </div>
+      <div class="card">
+        <h2>🔍 搜索与筛选</h2>
+        <p>支持按名称、标签、年代筛选。使用右上角搜索框可快速定位特定作品。部分页面配有短评与概要。</p>
+        <span class="tag">精准查找</span>
+      </div>
+      <div class="card">
+        <h2>📌 收藏与记录</h2>
+        <p>注册后可以标记感兴趣的游戏，建立个人游玩清单。过往记录会保存在账号中，方便回顾。</p>
+        <span class="tag">个人化</span>
+      </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="notice-area">
+      <div class="notice-text">
+        <strong>💡 访问提醒</strong><br>
+        部分页面可能需要较新版本的浏览器，建议保持 Chrome、Edge 或 Safari 为最新。若加载异常，可尝试刷新或关闭广告拦截插件。
+      </div>
+      <div style="margin-top: 0.8rem; flex-shrink: 0;">
+        <span style="background: #eacba9; padding: 0.3rem 1.2rem; border-radius: 60px; font-size: 0.9rem;">📎 建议使用桌面或平板访问</span>
+      </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div class="info-row">
+      <div class="info-item">
+        <h3>适用场景</h3>
+        <ul>
+          <li>查找游戏资料</li>
+          <li>了解更新动态</li>
+          <li>浏览作品印象</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>内容来源</h3>
+        <ul>
+          <li>官方信息页</li>
+          <li>用户简要评测</li>
+          <li>社区整理列表</li>
+        </ul>
+      </div>
+      <div class="info-item">
+        <h3>实用功能</h3>
+        <ul>
+          <li>标签分类浏览</li>
+          <li>按年份排序</li>
+          <li>收藏夹管理</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>常见问题 · 简答</h3>
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册才能使用？</div>
+        <div class="faq-a">浏览内容无需注册。收藏、记录功能需创建账号。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">手机上适配如何？</div>
+        <div class="faq-a">页面支持响应式布局，但部分筛选控件在窄屏上会折叠，建议横屏或使用平板。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">信息更新频率怎样？</div>
+        <div class="faq-a">游戏库与资料会跟随官方发布不定期补充，近期动态区域更新较频繁。</div>
+      </div>
+    </div>
+
+    <!-- 自然嵌入链接的句子 -->
+    <div class="link-sentence">
+      ✦ 若想直接浏览内容，可前往 <a href="https://web-zh-i-game.com.cn">爱游戏</a> 主页查看分类与最新信息。
+    </div>
+
+    <div class="footer-note">
+      本页为知识库指南，内容基于站点公开信息整理，供参考。页面版本：2025 · 暖色版
+    </div>
+  </div>
+</body>
+</html>
