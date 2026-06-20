@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>leyu · 简明指南与访问提醒</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f2f4f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* 卡片容器 */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+      padding: 2.2rem 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem 2.5rem;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1f2a3e;
+      margin-bottom: 1rem;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: #5e6f8d;
+      max-width: 680px;
+      margin: 0 auto 1.4rem;
+    }
+    .hero .meta-note {
+      display: inline-block;
+      background: #eef1f7;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      color: #4b5e7a;
+    }
+
+    /* 两栏/响应式网格 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    @media (max-width: 680px) {
+      body { padding: 1.2rem 0.8rem; }
+      .card { padding: 1.6rem 1.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* 特点列表 */
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .feature-list li::before {
+      content: "—";
+      color: #7f8fa6;
+      font-weight: 300;
+      display: inline-block;
+      width: 1.2rem;
+    }
+
+    /* 提醒样式 */
+    .reminder-box {
+      background: #f7f9fc;
+      border-left: 4px solid #b0c4de;
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    /* 链接特殊样式：嵌入句子，不加粗 */
+    a {
+      color: #2c5282;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd5e0;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: #1a365d;
+      border-bottom-color: #2c5282;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #edf0f5;
+    }
+    .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #1f2a3e;
+    }
+    .faq-a {
+      font-size: 0.95rem;
+      color: #4a5a72;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    .footer-links span {
+      color: #7a8aa0;
+    }
+
+    .fine-print {
+      font-size: 0.8rem;
+      color: #8b9aae;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="card hero">
+    <h1>leyu · 简明指南</h1>
+    <p class="tagline">一个关于访问环境、使用习惯与信息核对的温和提醒。希望每一次浏览都清晰、顺畅。</p>
+    <div class="meta-note">基于常见场景整理 · 仅供参考</div>
+  </div>
+
+  <!-- 优势 + 说明 两列 -->
+  <div class="grid-2">
+    <!-- 左侧：优势区 -->
+    <div class="card">
+      <h2 style="font-weight:500; font-size:1.4rem; margin-bottom:1rem;">日常使用优势</h2>
+      <ul class="feature-list">
+        <li>页面结构简洁，减少冗余跳转，专注内容本身</li>
+        <li>对不同网络环境做了基础适配，多数情况下加载稳定</li>
+        <li>信息层级清晰，适合快速浏览或深度阅读</li>
+        <li>持续优化交互反馈，避免过度弹窗或广告打扰</li>
+      </ul>
+      <div style="margin-top:1.6rem; font-size:0.95rem; color:#4a5a72;">
+        如果你对界面或功能有疑问，可以留意页面底部的常见问题摘要，很多细节都已有说明。
+      </div>
+    </div>
+
+    <!-- 右侧：说明区 + 提示 -->
+    <div class="card">
+      <h2 style="font-weight:500; font-size:1.4rem; margin-bottom:0.4rem;">访问提醒与说明</h2>
+      <p style="margin-bottom:0.8rem;">
+        无论你是第一次接触还是已经熟悉，都可以花一分钟了解以下信息，有助于更顺畅地使用。
+      </p>
+      <div class="reminder-box">
+        <strong style="display:block; margin-bottom:0.2rem;">🔍 环境与链接</strong>
+        部分区域可能需要稳定的网络连接。如果你在访问时遇到加载延迟，可以先检查本地网络或尝试刷新。关于主站，你可以直接使用
+        <a href="https://m-site-leyu.com">leyu</a> 作为基础入口，它指向当前服务的核心页面。
+      </div>
+      <div class="reminder-box" style="margin-top:0.8rem;">
+        <strong style="display:block; margin-bottom:0.2rem;">📌 内容与实际</strong>
+        页面上的所有功能描述均基于实际版本，未做夸大修饰。如果发现信息与体验不符，建议以页面实时展示为准。
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要区 -->
+  <div class="card">
+    <h2 style="font-weight:500; font-size:1.4rem; margin-bottom:1rem;">FAQ 摘要 — 快速参考</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">问：为什么有时页面打不开？</div>
+      <div class="faq-a">多数情况与本地网络或 DNS 缓存有关。可尝试更换网络环境，或等待几分钟后重试。主站 <a href="https://m-site-leyu.com">leyu</a> 本身服务稳定性较好。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：需要注册或登录才能浏览吗？</div>
+      <div class="faq-a">大部分内容无需登录即可阅读。部分个性化功能可能需要简单注册，页面会有明确提示。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">问：移动端和电脑端体验有区别吗？</div>
+      <div class="faq-a">已针对手机与平板做响应式适配，但部分复杂布局在宽屏下观感更佳。你可以根据设备自由缩放。</div>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.95rem; color:#5e6f8d;">
+      更多疑问可以在站内帮助区域查找，或通过页面底部的相关链接了解背景信息。
+    </p>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="card" style="padding:1.6rem 2rem;">
+    <div class="footer-links">
+      <a href="https://m-site-leyu.com">leyu</a>
+      <span>·</span>
+      <a href="https://m-site-leyu.com">leyu</a>
+      <span>·</span>
+      <a href="https://m-site-leyu.com">leyu</a>
+      <span>·</span>
+      <a href="https://m-site-leyu.com">leyu</a>
+    </div>
+    <div class="fine-print">
+      本页仅为介绍与提醒，不构成任何保证或承诺。实际体验以网站为准。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
